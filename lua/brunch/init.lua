@@ -1,11 +1,28 @@
 -- Credit: https://github.com/catppuccin/nvim
 
 ---@type Brunch
----@diagnostic disable-next-line: missing-fields
 local M = {
   default_opts = {
-    background = { light = 'sunday', dark = 'saturday' },
+    background = {
+      light = 'sunday',
+      dark = 'saturday',
+    },
     compile_path = vim.fn.stdpath 'cache' .. '/brunch',
+    styles = {
+      comments = {},
+      conditionals = {},
+      loops = {},
+      functions = {},
+      keywords = {},
+      strings = {},
+      variables = {},
+      numbers = {},
+      booleans = {},
+      properties = {},
+      types = {},
+      operators = {},
+    },
+    color_overrides = {},
   },
   variants = { sunday = 1, saturday = 2 },
   path_sep = jit and (jit.os == 'Windows' and '\\' or '/')
