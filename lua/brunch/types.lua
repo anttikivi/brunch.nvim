@@ -133,7 +133,7 @@
 ---@field style 'classic' | nil
 
 ---@alias BrunchHighlightArgs 'bold' | 'underline' | 'undercurl' | 'underdouble' | 'underdotted' | 'underdashed' | 'strikethrough' | 'reverse' | 'inverse' | 'italic' | 'standout' | 'altfont' | 'nocombine' | 'NONE'
----@alias BrunchHighlightOverrideFn fun(colors: BrunchColors<string>): { [string]: BrunchHighlight}
+---@alias BrunchHighlightOverrideFn fun(colors: BrunchColors<number>): { [string]: BrunchHighlight}
 ---@alias BrunchHighlightOverrides BrunchVariants<BrunchHighlightOverrideFn>
 
 ---@class BrunchHighlight
