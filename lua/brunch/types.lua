@@ -84,12 +84,11 @@
 ---@field gitsigns boolean?
 ---@field harpoon boolean?
 ---@field headlines boolean?
----@field illuminate boolean?
 ---@field indent_blankline BrunchIntegrationIndentBlankline | boolean?
 ---@field leap boolean?
 ---@field lsp_trouble boolean?
----@field markdown boolean?
 ---@field mason boolean?
+---@field markdown boolean?
 ---@field mini BrunchIntegrationMini | boolean?
 ---@field native_lsp BrunchIntegrationNativeLsp | boolean?
 ---@field neotree boolean?
