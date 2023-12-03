@@ -1,7 +1,31 @@
+---@type BrunchColors<string>
 return {
+  rosewater = '174',
   flamingo = '209',
+  pink = '206',
+  mauve = '92',
+  red = '1',
+  maroon = '160',
   peach = '202',
+  yellow = '3',
   green = '40',
   teal = '30',
-  overlay0 = '249',
+  sky = '69',
+  sapphire = '29',
+  blue = '27',
+  lavender = '63',
+  -- TODO: Check that this matches the macOS terminal text colour.
+  text = '0',
+  subtext1 = '233',
+  subtext0 = '236',
+  overlay2 = '238',
+  overlay1 = '242',
+  overlay0 = '246',
+  surface2 = '248',
+  surface1 = '250',
+  surface0 = '253',
+  -- TODO: Check that this matches the macOS terminal background colour.
+  base = '255',
+  mantle = '254',
+  crust = '254',
 }
