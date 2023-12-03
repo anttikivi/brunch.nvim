@@ -1,3 +1,5 @@
+-- Credit: https://github.com/catppuccin/nvim
+
 local M = {}
 local B = bit
 
