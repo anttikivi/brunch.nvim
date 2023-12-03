@@ -36,7 +36,7 @@ function M.apply(variant)
       final_integration = vim.tbl_deep_extend(
         'force',
         final_integration,
-        require('brunch.groups.integration.' .. integration).get()
+        require('brunch.groups.integrations.' .. integration).get()
       )
     end
   end
