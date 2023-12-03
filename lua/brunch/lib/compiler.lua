@@ -10,7 +10,12 @@ local function inspect(t)
   local list = {}
 
   for k, v in pairs(t) do
+    if k == 'fg' or k == 'bg' then
+      k = 'cterm' .. k
+    end
+
     local tv = type(v)
+
     if tv == 'string' then
       table.insert(list, fmt([[%s = '%s']], k, v))
     elseif tv == 'table' then
