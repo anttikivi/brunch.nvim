@@ -8,6 +8,7 @@ local M = {
       dark = 'saturday',
     },
     compile_path = vim.fn.stdpath 'cache' .. '/brunch',
+    show_end_of_buffer = false,
     term_colors = false,
     no_bold = false,
     no_underline = false,

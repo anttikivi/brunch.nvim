@@ -5,10 +5,10 @@ local M = {}
 function M.apply(variant)
   variant = variant or require('brunch').variant
 
-  -- local _O, _C, _U = O, C, U
-  local _O, _C = O, C
+  local _O, _C, _U = O, C, U
   O = require('brunch').options
   C = require('brunch.palettes').get_palette(variant)
+  U = require 'brunch.utils.colors'
 
   C.none = 'NONE'
 
@@ -58,8 +58,7 @@ function M.apply(variant)
       or {}
   )
 
-  -- O, C, U = _O, _C, _U -- Returning global var
-  O, C = _O, _C -- Returning global var
+  O, C, U = _O, _C, _U -- Returning global var
 
   return theme
 end

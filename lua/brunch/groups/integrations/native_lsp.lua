@@ -11,7 +11,6 @@ function M.get()
   local warning = C.yellow
   local info = C.sky
   local hint = C.teal
-  local darkening_percentage = 0.095
 
   return {
     -- These groups are for the native LSP client. Some other LSP clients may
@@ -22,24 +21,23 @@ function M.get()
     LspReferenceWrite = { bg = C.surface1 }, -- used for highlighting "write" references
     -- highlight diagnostics in numberline
 
-    -- TODO: Remove the darkening.
     DiagnosticVirtualTextError = {
-      bg = U.darken(error, darkening_percentage, C.base),
+      bg = C.flamingo,
       fg = error,
       style = virtual_text.errors,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticVirtualTextWarn = {
-      bg = U.darken(warning, darkening_percentage, C.base),
+      bg = C.peach,
       fg = warning,
       style = virtual_text.warnings,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticVirtualTextInfo = {
-      bg = U.darken(info, darkening_percentage, C.base),
+      bg = C.blue,
       fg = info,
       style = virtual_text.information,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticVirtualTextHint = {
-      bg = U.darken(hint, darkening_percentage, C.base),
+      bg = C.sky,
       fg = hint,
       style = virtual_text.hints,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
@@ -112,10 +110,7 @@ function M.get()
       -- fg of `Comment`
       fg = C.overlay0,
       -- bg of `CursorLine`
-      bg = U.vary_color(
-        { latte = U.lighten(C.mantle, 0.70, C.base) },
-        U.darken(C.surface0, 0.64, C.base)
-      ),
+      bg = U.vary_color({ latte = C.mantle }, C.mantle),
     }, -- virtual text of the inlay hints
     LspInfoBorder = { link = 'FloatBorder' }, -- LspInfo border
   }

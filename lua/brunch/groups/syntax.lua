@@ -73,12 +73,10 @@ function M.get()
     diffLine = { fg = C.overlay0 },
     diffIndexLine = { fg = C.teal },
 
-    -- TODO: Replace these with something that is supported by the terminal.
-
-    -- DiffAdd = { bg = U.darken(C.green, 0.18, C.base) }, -- diff mode: Added line |diff.txt|
-    -- DiffChange = { bg = U.darken(C.blue, 0.07, C.base) }, -- diff mode: Changed line |diff.txt|
-    -- DiffDelete = { bg = U.darken(C.red, 0.18, C.base) }, -- diff mode: Deleted line |diff.txt|
-    -- DiffText = { bg = U.darken(C.blue, 0.30, C.base) }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd = { bg = C.green }, -- diff mode: Added line |diff.txt|
+    DiffChange = { bg = C.blue }, -- diff mode: Changed line |diff.txt|
+    DiffDelete = { bg = C.red }, -- diff mode: Deleted line |diff.txt|
+    DiffText = { bg = C.blue }, -- diff mode: Changed text within a changed line |diff.txt|
 
     -- NeoVim
     healthError = { fg = C.red },

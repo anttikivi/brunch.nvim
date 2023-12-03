@@ -2,7 +2,6 @@
 
 local M = {}
 
--- TODO: Check for the italics and other unsupported styles.
 function M.get()
   local bg_highlight = C.base
 
@@ -28,7 +27,7 @@ function M.get()
 
     MiniStarterCurrent = {},
     MiniStarterFooter = { fg = C.yellow, style = { 'italic' } },
-    MiniStarterHeader = { fg = C.blue },
+    MiniStarterHeaker = { fg = C.blue },
     MiniStarterInactive = { fg = C.surface2, style = O.styles.comments },
     MiniStarterItem = { fg = C.text },
     MiniStarterItemBullet = { fg = C.blue },

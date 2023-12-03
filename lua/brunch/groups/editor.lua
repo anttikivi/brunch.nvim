@@ -11,10 +11,7 @@ function M.get()
     CursorIM = { fg = C.base, bg = C.text }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn = { bg = C.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = {
-      bg = U.vary_color(
-        { latte = U.lighten(C.mantle, 0.70, C.base) },
-        U.darken(C.surface0, 0.64, C.base)
-      ),
+      bg = U.vary_color({ latte = C.mantle }, C.mantle),
     }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if forecrust (ctermfg OR guifg) is not set.
     Directory = { fg = C.blue }, -- directory names (and other special names in listings)
     EndOfBuffer = { fg = O.show_end_of_buffer and C.surface1 or C.base }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -46,8 +43,10 @@ function M.get()
     FloatBorder = { fg = C.blue },
     FloatTitle = { fg = C.subtext0 }, -- Title of floating windows
     Pmenu = {
-      bg = (O.transparent_background and vim.o.pumblend == 0) and C.none
-        or U.darken(C.surface0, 0.8, C.crust),
+      -- Original:
+      -- bg = (O.transparent_background and vim.o.pumblend == 0) and C.none
+      --   or U.darken(C.surface0, 0.8, C.crust),
+      bg = C.mantle,
       fg = C.overlay2,
     }, -- Popup menu: normal item.
     PmenuSel = { bg = C.surface1, style = { 'bold' } }, -- Popup menu: selected item.
@@ -55,8 +54,8 @@ function M.get()
     PmenuThumb = { bg = C.overlay0 }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = C.blue }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = C.surface1, style = { 'bold' } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search = { bg = U.darken(C.sky, 0.30, C.base), fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-    IncSearch = { bg = U.darken(C.sky, 0.90, C.base), fg = C.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Search = { bg = C.sky, fg = C.text }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    IncSearch = { bg = C.teal, fg = C.mantle }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { bg = C.red, fg = C.mantle }, -- 'cursearch' highlighting: highlights the current search you're on differently
     SpecialKey = { link = 'NonText' }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
     SpellBad = { sp = C.red, style = { 'undercurl' } }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.

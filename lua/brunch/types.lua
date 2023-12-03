@@ -14,6 +14,8 @@
 ---@field background BrunchBackground?
 ---- The directory where the cache is stored.
 ---@field compile_path string?
+-- Toggle the `~` characters after the end of buffers.
+---@field show_end_of_buffer boolean?
 -- If true, sets terminal colors (e.g. `g:terminal_color_0`).
 ---@field term_colors boolean?
 -- Disables all bold styles.
@@ -91,7 +93,6 @@
 ---@field markdown boolean?
 ---@field mini BrunchIntegrationMini | boolean?
 ---@field native_lsp BrunchIntegrationNativeLsp | boolean?
----@field neotree boolean?
 ---@field noice boolean?
 ---@field notify boolean?
 ---@field semantic_tokens boolean?
