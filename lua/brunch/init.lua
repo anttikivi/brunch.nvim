@@ -8,6 +8,9 @@ local M = {
       dark = 'saturday',
     },
     compile_path = vim.fn.stdpath 'cache' .. '/brunch',
+    term_colors = false,
+    no_bold = false,
+    no_underline = false,
     styles = {
       comments = {},
       conditionals = {},
@@ -22,7 +25,48 @@ local M = {
       types = {},
       operators = {},
     },
+    integrations = {
+      cmp = true,
+      dashboard = true,
+      flash = true,
+      gitsigns = true,
+      headlines = true,
+      harpoon = true,
+      illuminate = true,
+      indent_blankline = { enabled = true },
+      lsp_trouble = true,
+      mason = true,
+      markdown = true,
+      mini = true,
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = {},
+          hints = {},
+          warnings = {},
+          information = {},
+        },
+        underlines = {
+          errors = { 'underline' },
+          hints = { 'underline' },
+          warnings = { 'underline' },
+          information = { 'underline' },
+        },
+        inlay_hints = {
+          background = true,
+        },
+      },
+      neotree = true,
+      noice = true,
+      notify = true,
+      semantic_tokens = true,
+      telescope = true,
+      treesitter = true,
+      treesitter_context = true,
+      which_key = true,
+    },
     color_overrides = {},
+    highlight_overrides = {},
   },
   variants = { sunday = 1, saturday = 2 },
   path_sep = jit and (jit.os == 'Windows' and '\\' or '/')
@@ -121,6 +165,39 @@ function M.setup(user_opts)
       file:close()
     end
   end
+end
+
+vim.api.nvim_create_user_command('Brunch', function(inp)
+  vim.api.nvim_command('colorscheme brunch-' .. get_variant(inp.args))
+end, {
+  nargs = 1,
+  complete = function(line)
+    return vim.tbl_filter(function(val)
+      return vim.startswith(val, line)
+    end, vim.tbl_keys(M.variants))
+  end,
+})
+
+vim.api.nvim_create_user_command('BrunchCompile', function()
+  for name, _ in pairs(package.loaded) do
+    if name:match '^brunch.' then
+      package.loaded[name] = nil
+    end
+  end
+  M.compile()
+  vim.notify('Brunch (info): compiled cache!', vim.log.levels.INFO)
+  vim.cmd.colorscheme 'brunch'
+end, {})
+
+if vim.g.brunch_debug then
+  vim.api.nvim_create_autocmd('BufWritePost', {
+    pattern = '*/brunch/*',
+    callback = function()
+      vim.schedule(function()
+        vim.cmd 'BrunchCompile'
+      end)
+    end,
+  })
 end
 
 return M

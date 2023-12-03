@@ -14,17 +14,27 @@
 ---@field background BrunchBackground?
 ---- The directory where the cache is stored.
 ---@field compile_path string?
+-- If true, sets terminal colors (e.g. `g:terminal_color_0`).
+---@field term_colors boolean?
+-- Disables all bold styles.
+---@field no_bold boolean?
+-- Disables all underline styles.
+---@field no_underline boolean?
 -- Handles the style of general hl groups (see `:h highlight-groups`).
 ---@field styles BrunchStyles?
----- Catppuccin colors can be overwritten here.
+-- Toggle integrations. Integrations allow Brunch to set the theme of various plugins.
+---@field integrations BrunchIntegrations?
+---- Brunch colours to overwrite.
 ---@field color_overrides BrunchColors | BrunchVariants<BrunchColors<string>> | nil
+---- Brunch hghlights to overwrite.
+---@field highlight_overrides BrunchHighlightOverrides?
 ---- The default variant to use on startup.
 ---@field variant BrunchVariant?
 
 ---@class BrunchBackground
--- Catppuccin flavor to use when `:set background=dark` is set.
+-- Brunch variant to use when `:set background=dark` is set.
 ---@field dark BrunchVariant?
--- Catppuccin flavor to use when `:set background=light` is set.
+-- Brunch variant to use when `:set background=light` is set.
 ---@field light BrunchVariant?
 
 ---@class BrunchStyles
@@ -53,4 +63,81 @@
 -- Change the style of operators.
 ---@field operators BrunchHighlightArgs[]?
 
----@alias BrunchHighlightArgs "bold" | "underline" | "undercurl" | "underdouble" | "underdotted" | "underdashed" | "strikethrough" | "reverse" | "inverse" | "italic" | "standout" | "altfont" | "nocombine" | "NONE"
+---@class BrunchNativeLspStyles
+-- Change the style of LSP errors.
+---@field errors BrunchHighlightArgs[]?
+-- Change the style of LSP hints.
+---@field hints BrunchHighlightArgs[]?
+-- Change the style of LSP warnings.
+---@field warnings BrunchHighlightArgs[]?
+-- Change the style of LSP information.
+---@field information BrunchHighlightArgs[]?
+
+---@class BrunchNativeLspInlayHints
+-- Toggle the background of inlay hints.
+---@field background boolean?
+
+---@class BrunchIntegrations
+---@field cmp boolean?
+---@field dashboard boolean?
+---@field flash boolean?
+---@field gitsigns boolean?
+---@field harpoon boolean?
+---@field headlines boolean?
+---@field illuminate boolean?
+---@field indent_blankline BrunchIntegrationIndentBlankline | boolean?
+---@field leap boolean?
+---@field lsp_trouble boolean?
+---@field markdown boolean?
+---@field mason boolean?
+---@field mini BrunchIntegrationMini | boolean?
+---@field native_lsp BrunchIntegrationNativeLsp | boolean?
+---@field neotree boolean?
+---@field noice boolean?
+---@field notify boolean?
+---@field semantic_tokens boolean?
+---@field telescope BrunchIntegrationTelescope | boolean?
+---@field treesitter boolean?
+---@field treesitter_context boolean?
+---@field which_key boolean?
+
+---@class BrunchIntegrationIndentBlankline
+-- Whether to enable the integration.
+---@field enabled boolean
+-- Sets the color of the scope line
+---@field scope_color BrunchColor?
+-- Enables char highlights per indent level.
+-- Follow the instructions on the plugins GitHub repo to set it up.
+---@field colored_indent_levels boolean?
+--
+---@class BrunchIntegrationMini
+-- Whether to enable the integration.
+---@field enabled boolean
+-- Sets the color of the scope line
+---@field indentscope_color BrunchColor?
+
+---@class BrunchIntegrationNativeLsp
+-- Whether to enable the Native LSP integration.
+---@field enabled boolean
+-- Styles to apply to virtual text.
+---@field virtual_text BrunchNativeLspStyles?
+-- Styles to apply to underlines.
+---@field underlines BrunchNativeLspStyles?
+-- Inlay hints options.
+---@field inlay_hints BrunchNativeLspInlayHints?
+
+---@class BrunchIntegrationTelescope
+-- Whether to enable the telescope integration
+---@field enabled boolean?
+-- The style of Telescope
+---@field style 'classic' | nil
+
+---@alias BrunchHighlightArgs 'bold' | 'underline' | 'undercurl' | 'underdouble' | 'underdotted' | 'underdashed' | 'strikethrough' | 'reverse' | 'inverse' | 'italic' | 'standout' | 'altfont' | 'nocombine' | 'NONE'
+---@alias BrunchHighlightOverrideFn fun(colors: BrunchColors<string>): { [string]: BrunchHighlight}
+---@alias BrunchHighlightOverrides BrunchVariants<BrunchHighlightOverrideFn>
+
+---@class BrunchHighlight
+---@field fg string?
+---@field bg string?
+---@field style BrunchHighlightArgs[]?
+---@field link string?
