@@ -6,9 +6,9 @@ function M.get()
   return {
     -- TelescopeNormal = { link = 'NormalFloat' }, -- Respect telescope's default float bg
     TelescopeBorder = { link = 'FloatBorder' },
-    TelescopeSelectionCaret = { fg = C.flamingo },
+    TelescopeSelectionCaret = { fg = C.grapefruit },
     TelescopeSelection = { fg = C.text, bg = C.surface0, style = { 'bold' } },
-    TelescopeMatching = { fg = C.blue },
+    TelescopeMatching = { fg = C.blueberry },
   }
 end
 

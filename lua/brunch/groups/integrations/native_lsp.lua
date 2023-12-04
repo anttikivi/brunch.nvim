@@ -7,10 +7,10 @@ function M.get()
   local underlines = O.integrations.native_lsp.underlines
   local inlay_hints = O.integrations.native_lsp.inlay_hints
 
-  local error = C.red
-  local warning = C.yellow
-  local info = C.sky
-  local hint = C.teal
+  local error = C.tomato
+  local warning = C.mimosa
+  local info = C.cornflower
+  local hint = C.aqua
 
   return {
     -- These groups are for the native LSP client. Some other LSP clients may
@@ -22,7 +22,7 @@ function M.get()
     -- highlight diagnostics in numberline
 
     DiagnosticVirtualTextError = {
-      bg = C.flamingo,
+      bg = C.grapefruit,
       fg = error,
       style = virtual_text.errors,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
@@ -32,12 +32,12 @@ function M.get()
       style = virtual_text.warnings,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticVirtualTextInfo = {
-      bg = C.blue,
+      bg = C.blueberry,
       fg = info,
       style = virtual_text.information,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticVirtualTextHint = {
-      bg = C.sky,
+      bg = C.cornflower,
       fg = hint,
       style = virtual_text.hints,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default

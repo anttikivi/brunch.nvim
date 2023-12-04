@@ -21,7 +21,7 @@ If you want to stay on nvim 0.7, disable the integration.
     ['@lsp.type.enumMember'] = { link = '@constant' },
     ['@lsp.type.escapeSequence'] = { link = '@string.escape' },
     ['@lsp.type.formatSpecifier'] = { link = '@punctuation.special' },
-    ['@lsp.type.interface'] = { fg = C.flamingo },
+    ['@lsp.type.interface'] = { fg = C.grapefruit },
     ['@lsp.type.keyword'] = { link = '@keyword' },
     ['@lsp.type.namespace'] = { link = '@namespace' },
     ['@lsp.type.number'] = { link = '@number' },

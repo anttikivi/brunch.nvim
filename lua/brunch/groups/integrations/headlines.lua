@@ -8,11 +8,11 @@ function M.get()
     Quote = { link = '@text.strong' },
     CodeBlock = { bg = C.mantle },
     Headline = { link = 'Headline1' },
-    Headline1 = { bg = C.surface0, fg = C.red },
+    Headline1 = { bg = C.surface0, fg = C.tomato },
     Headline2 = { bg = C.surface0, fg = C.peach },
-    Headline3 = { bg = C.surface0, fg = C.yellow },
-    Headline4 = { bg = C.surface0, fg = C.green },
-    Headline5 = { bg = C.surface0, fg = C.sapphire },
+    Headline3 = { bg = C.surface0, fg = C.mimosa },
+    Headline4 = { bg = C.surface0, fg = C.kale },
+    Headline5 = { bg = C.surface0, fg = C.avocado },
     Headline6 = { bg = C.surface0, fg = C.lavender },
   }
 end

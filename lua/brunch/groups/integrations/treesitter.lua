@@ -30,7 +30,7 @@ nvim-treesitter integration requires neovim 0.8
     -- Literals
     ['@string'] = { link = 'String' }, -- For strings.
     ['@string.regex'] = { fg = C.peach, style = O.styles.strings or {} }, -- For regexes.
-    ['@string.escape'] = { fg = C.pink, style = O.styles.strings or {} }, -- For escape characters within a string.
+    ['@string.escape'] = { fg = C.raspberry, style = O.styles.strings or {} }, -- For escape characters within a string.
     ['@string.special'] = { link = 'Special' }, -- other special strings (e.g. dates)
 
     ['@character'] = { link = 'Character' }, -- character literals
@@ -44,20 +44,20 @@ nvim-treesitter integration requires neovim 0.8
     ['@function'] = { link = 'Function' }, -- For function (calls and definitions).
     ['@function.builtin'] = { fg = C.peach, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
     ['@function.call'] = { link = 'Function' }, -- function calls
-    ['@function.macro'] = { fg = C.teal, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Rust.
+    ['@function.macro'] = { fg = C.aqua, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in Rust.
     ['@method'] = { link = 'Function' }, -- For method definitions.
     ['@method.call'] = { link = 'Function' }, -- For method calls.
 
-    ['@constructor'] = { fg = C.sapphire }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-    ['@parameter'] = { fg = C.maroon, style = O.styles.variables or {} }, -- For parameters of a function.
+    ['@constructor'] = { fg = C.avocado }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+    ['@parameter'] = { fg = C.cranberry, style = O.styles.variables or {} }, -- For parameters of a function.
 
     -- Keywords
     ['@keyword'] = { link = 'Keyword' }, -- For keywords that don't fall in previous categories.
-    ['@keyword.function'] = { fg = C.mauve, style = O.styles.keywords or {} }, -- For keywords used to define a function.
-    ['@keyword.operator'] = { fg = C.mauve, style = O.styles.operators or {} }, -- For new keyword operator
-    ['@keyword.return'] = { fg = C.mauve, style = O.styles.keywords or {} },
+    ['@keyword.function'] = { fg = C.blackberry, style = O.styles.keywords or {} }, -- For keywords used to define a function.
+    ['@keyword.operator'] = { fg = C.blackberry, style = O.styles.operators or {} }, -- For new keyword operator
+    ['@keyword.return'] = { fg = C.blackberry, style = O.styles.keywords or {} },
     -- JS & derivative
-    ['@keyword.export'] = { fg = C.sky, style = O.styles.keywords },
+    ['@keyword.export'] = { fg = C.cornflower, style = O.styles.keywords },
 
     ['@conditional'] = { link = 'Conditional' }, -- For keywords related to conditionnals.
     ['@repeat'] = { link = 'Repeat' }, -- For keywords related to loops.
@@ -69,7 +69,7 @@ nvim-treesitter integration requires neovim 0.8
     -- Types
     ['@type'] = { link = 'Type' }, -- For types.
     ['@type.builtin'] = {
-      fg = C.yellow,
+      fg = C.mimosa,
       style = O.styles.properties or { 'italic' },
     }, -- For builtin types.
     ['@type.definition'] = { link = 'Type' }, -- type definitions (e.g. `typedef` in C)
@@ -83,47 +83,47 @@ nvim-treesitter integration requires neovim 0.8
     -- Identifiers
 
     ['@variable'] = { fg = C.text, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
-    ['@variable.builtin'] = { fg = C.red, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
+    ['@variable.builtin'] = { fg = C.tomato, style = O.styles.properties or {} }, -- Variable names that are defined by the languages, like this or self.
 
     ['@constant'] = { link = 'Constant' }, -- For constants
     ['@constant.builtin'] = { fg = C.peach, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
     ['@constant.macro'] = { link = 'Macro' }, -- For constants that are defined by macros: NULL in C.
 
     ['@namespace'] = { fg = C.lavender, style = { 'italic' } }, -- For identifiers referring to modules and namespaces.
-    ['@symbol'] = { fg = C.flamingo },
+    ['@symbol'] = { fg = C.grapefruit },
 
     -- Text
     ['@text'] = { fg = C.text }, -- For strings considerated text in a markup language.
-    ['@text.strong'] = { fg = C.maroon, style = { 'bold' } }, -- bold
-    ['@text.emphasis'] = { fg = C.maroon, style = { 'italic' } }, -- italic
+    ['@text.strong'] = { fg = C.cranberry, style = { 'bold' } }, -- bold
+    ['@text.emphasis'] = { fg = C.cranberry, style = { 'italic' } }, -- italic
     ['@text.underline'] = { link = 'Underline' }, -- underlined text
     ['@text.strike'] = { fg = C.text, style = { 'strikethrough' } }, -- strikethrough text
-    ['@text.title'] = { fg = C.blue, style = { 'bold' } }, -- titles like: # Example
-    ['@text.literal'] = { fg = C.teal }, -- used for inline code in markdown and for doc in python (""")
+    ['@text.title'] = { fg = C.blueberry, style = { 'bold' } }, -- titles like: # Example
+    ['@text.literal'] = { fg = C.aqua }, -- used for inline code in markdown and for doc in python (""")
     ['@text.uri'] = { fg = C.rosewater, style = { 'italic', 'underline' } }, -- urls, links and emails
-    ['@text.math'] = { fg = C.blue }, -- math environments (e.g. `$ ... $` in LaTeX)
-    ['@text.environment'] = { fg = C.pink }, -- text environments of markup languages
-    ['@text.environment.name'] = { fg = C.blue }, -- text indicating the type of an environment
+    ['@text.math'] = { fg = C.blueberry }, -- math environments (e.g. `$ ... $` in LaTeX)
+    ['@text.environment'] = { fg = C.raspberry }, -- text environments of markup languages
+    ['@text.environment.name'] = { fg = C.blueberry }, -- text indicating the type of an environment
     ['@text.reference'] = { link = 'Tag' }, -- text references, footnotes, citations, etc.
 
-    ['@text.todo'] = { fg = C.base, bg = C.yellow }, -- todo notes
-    ['@text.todo.checked'] = { fg = C.green }, -- todo notes
+    ['@text.todo'] = { fg = C.base, bg = C.mimosa }, -- todo notes
+    ['@text.todo.checked'] = { fg = C.kale }, -- todo notes
     ['@text.todo.unchecked'] = { fg = C.overlay1 }, -- todo notes
-    ['@text.note'] = { fg = C.base, bg = C.blue },
-    ['@text.warning'] = { fg = C.base, bg = C.yellow },
-    ['@text.danger'] = { fg = C.base, bg = C.red },
+    ['@text.note'] = { fg = C.base, bg = C.blueberry },
+    ['@text.warning'] = { fg = C.base, bg = C.mimosa },
+    ['@text.danger'] = { fg = C.base, bg = C.tomato },
 
     ['@text.diff.add'] = { link = 'diffAdded' }, -- added text (for diff files)
     ['@text.diff.delete'] = { link = 'diffRemoved' }, -- deleted text (for diff files)
 
     -- Tags
-    ['@tag'] = { fg = C.mauve }, -- Tags like html tag names.
-    ['@tag.attribute'] = { fg = C.teal, style = { 'italic' } }, -- Tags like html tag names.
-    ['@tag.delimiter'] = { fg = C.sky }, -- Tag delimiter like < > /
+    ['@tag'] = { fg = C.blackberry }, -- Tags like html tag names.
+    ['@tag.attribute'] = { fg = C.aqua, style = { 'italic' } }, -- Tags like html tag names.
+    ['@tag.delimiter'] = { fg = C.cornflower }, -- Tag delimiter like < > /
 
     -- Language specific:
     -- bash
-    ['@function.builtin.bash'] = { fg = C.red, style = { 'italic' } },
+    ['@function.builtin.bash'] = { fg = C.tomato, style = { 'italic' } },
 
     -- markdown
     ['@text.title.2.markdown'] = { link = 'rainbow2' },
@@ -134,25 +134,25 @@ nvim-treesitter integration requires neovim 0.8
     ['@text.title.6.markdown'] = { link = 'rainbow6' },
 
     -- java
-    ['@constant.java'] = { fg = C.teal },
+    ['@constant.java'] = { fg = C.aqua },
 
     -- css
     ['@property.css'] = { fg = C.lavender },
-    ['@property.id.css'] = { fg = C.blue },
-    ['@property.class.css'] = { fg = C.yellow },
+    ['@property.id.css'] = { fg = C.blueberry },
+    ['@property.class.css'] = { fg = C.mimosa },
     ['@type.css'] = { fg = C.lavender },
-    ['@type.tag.css'] = { fg = C.mauve },
+    ['@type.tag.css'] = { fg = C.blackberry },
     ['@string.plain.css'] = { fg = C.peach },
     ['@number.css'] = { fg = C.peach },
 
     -- toml
-    ['@property.toml'] = { fg = C.blue }, -- Differentiates between string and properties
+    ['@property.toml'] = { fg = C.blueberry }, -- Differentiates between string and properties
 
     -- json
-    ['@label.json'] = { fg = C.blue }, -- For labels: label: in C and :label: in Lua.
+    ['@label.json'] = { fg = C.blueberry }, -- For labels: label: in C and :label: in Lua.
 
     -- lua
-    ['@constructor.lua'] = { fg = C.flamingo }, -- For constructor calls and definitions: = { } in Lua.
+    ['@constructor.lua'] = { fg = C.grapefruit }, -- For constructor calls and definitions: = { } in Lua.
 
     -- typescript
     ['@property.typescript'] = {
@@ -163,22 +163,22 @@ nvim-treesitter integration requires neovim 0.8
 
     -- TSX (Typescript React)
     ['@constructor.tsx'] = { fg = C.lavender },
-    ['@tag.attribute.tsx'] = { fg = C.mauve, style = { 'italic' } },
+    ['@tag.attribute.tsx'] = { fg = C.blackberry, style = { 'italic' } },
 
     -- yaml
-    ['@field.yaml'] = { fg = C.blue }, -- For fields.
+    ['@field.yaml'] = { fg = C.blueberry }, -- For fields.
 
     -- Ruby
-    ['@symbol.ruby'] = { fg = C.flamingo },
+    ['@symbol.ruby'] = { fg = C.grapefruit },
 
     -- PHP
     ['@method.php'] = { link = 'Function' },
     ['@method.call.php'] = { link = 'Function' },
 
     -- C/C++
-    ['@type.builtin.c'] = { fg = C.yellow, style = {} },
+    ['@type.builtin.c'] = { fg = C.mimosa, style = {} },
     ['@property.cpp'] = { fg = C.text },
-    ['@type.builtin.cpp'] = { fg = C.yellow, style = {} },
+    ['@type.builtin.cpp'] = { fg = C.mimosa, style = {} },
 
     -- Misc
     gitcommitSummary = { fg = C.rosewater, style = { 'italic' } },
