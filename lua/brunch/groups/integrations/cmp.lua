@@ -4,14 +4,14 @@ local M = {}
 
 function M.get()
   return {
-    CmpItemAbbr = { fg = C.overlay2 },
+    CmpItemAbbr = { fg = C.subtext0, bg = C.surface1 },
     -- TODO: See for an alternative to strikethrough as it's probably not
     -- supported.
     CmpItemAbbrDeprecated = { fg = C.overlay0, style = { 'strikethrough' } },
     CmpItemKind = { fg = C.blue },
     CmpItemMenu = { fg = C.text },
-    CmpItemAbbrMatch = { fg = C.text, style = { 'bold' } },
-    CmpItemAbbrMatchFuzzy = { fg = C.text, style = { 'bold' } },
+    CmpItemAbbrMatch = { fg = C.sky, style = { 'bold' } },
+    CmpItemAbbrMatchFuzzy = { fg = C.sky, style = { 'bold' } },
 
     -- kind support
     CmpItemKindSnippet = { fg = C.mauve },
