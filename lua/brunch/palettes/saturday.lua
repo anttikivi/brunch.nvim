@@ -14,7 +14,6 @@ return {
   sapphire = 45,
   blue = 39,
   lavender = 147,
-  -- TODO: Check that this matches the macOS terminal text colour.
   text = 15,
   subtext1 = 254,
   subtext0 = 252,
@@ -24,7 +23,6 @@ return {
   surface2 = 240,
   surface1 = 238,
   surface0 = 237,
-  -- TODO: Check that this matches the macOS terminal background colour.
   base = 234,
   mantle = 233,
   crust = 232,
