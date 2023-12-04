@@ -52,7 +52,7 @@ function M.apply(variant)
 
   theme.custom_highlights = vim.tbl_deep_extend(
     'keep',
-    user_highlights[flavour] or {},
+    user_highlights[variant] or {},
     type(user_highlights.all) == 'function' and user_highlights.all(C)
       or user_highlights.all
       or {}
