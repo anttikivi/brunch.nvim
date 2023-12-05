@@ -26,6 +26,32 @@ function M.load(scheme)
     end
     vim.api.nvim_set_hl(0, group, hl)
   end
+
+  if scheme.options.terminal_colors then
+    vim.g.terminal_color_0 = scheme.colors.overlay0
+    vim.g.terminal_color_8 = scheme.colors.overlay1
+
+    vim.g.terminal_color_1 = scheme.colors.tomato
+    vim.g.terminal_color_9 = scheme.colors.tomato
+
+    vim.g.terminal_color_2 = scheme.colors.kale
+    vim.g.terminal_color_10 = scheme.colors.kale
+
+    vim.g.terminal_color_3 = scheme.colors.mimosa
+    vim.g.terminal_color_11 = scheme.colors.mimosa
+
+    vim.g.terminal_color_4 = scheme.colors.blueberry
+    vim.g.terminal_color_12 = scheme.colors.blueberry
+
+    vim.g.terminal_color_5 = scheme.colors.raspberry
+    vim.g.terminal_color_13 = scheme.colors.raspberry
+
+    vim.g.terminal_color_6 = scheme.colors.cornflower
+    vim.g.terminal_color_14 = scheme.colors.cornflower
+
+    vim.g.terminal_color_7 = scheme.colors.text
+    vim.g.terminal_color_15 = scheme.colors.text
+  end
 end
 
 return M
