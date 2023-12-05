@@ -64,13 +64,15 @@ function M.create(opts)
     Normal = { fg = c.text }, -- normal text
     NormalNC = { fg = c.text }, -- normal text in non-current windows
     NormalSB = { fg = c.text, bg = c.crust }, -- normal text in non-current windows
-    NormalFloat = { fg = c.text }, -- Normal text in floating windows.
+    NormalFloat = { fg = c.text, bg = c.surface0 }, -- Normal text in floating windows.
     FloatBorder = { fg = c.blueberry },
     FloatTitle = { fg = c.subtext0 }, -- Title of floating windows
-    Pmenu = { fg = c.mantle, bg = c.surface1 }, -- Popup menu: normal item.
-    PmenuSel = { bg = c.surface1, style = { 'bold' } }, -- Popup menu: selected item.
+    Pmenu = { fg = c.subtext1, bg = c.surface1 }, -- Popup menu: normal item.
+    PmenuSel = { fg = c.aqua, bg = c.surface0, style = { 'bold' } }, -- Popup menu: selected item.
     PmenuSbar = { bg = c.surface1 }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.overlay0 }, -- Popup menu: Thumb of the scrollbar.
+    Question = { fg = c.blueberry }, -- |hit-enter| prompt and yes/no questions
+    QuickFixLine = { bg = c.surface1, style = { 'bold' } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
