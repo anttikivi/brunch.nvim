@@ -84,6 +84,12 @@ function M.create(opts)
     SpellLocal = { sp = c.blueberry, style = { 'undercurl' } }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare = { sp = c.kale, style = { 'undercurl' } }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
+    StatusLine = { fg = c.text, bg = c.mantle }, -- status line of current window
+    StatusLineNC = { fg = c.surface1, bg = c.mantle }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine = { fg = c.surface1, bg = c.mantle }, -- tab pages line, not active tab page label
+    TabLineFill = {}, -- tab pages line, where there are no labels
+    TabLineSel = { fg = c.kale, bg = c.surface1 }, -- tab pages line, active tab page label
+
     -- Diffs
     -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
