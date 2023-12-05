@@ -14,6 +14,9 @@ local default_opts = {
     dark = 'saturday',
   },
   terminal_colors = false,
+  styles = {
+    comments = { 'italic' },
+  },
 }
 
 ---@type Options
