@@ -37,7 +37,7 @@ function M.create(opts)
     ErrorMsg = { fg = c.tomato, style = { 'bold', 'italic' } }, -- error messages on the command line
 
     -- Diffs
-    -- TODO: This don't seem to be working.
+    -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
     diffRemoved = { fg = c.tomato },
     diffChanged = { fg = c.blueberry },
