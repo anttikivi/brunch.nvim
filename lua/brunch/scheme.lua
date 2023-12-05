@@ -1,4 +1,6 @@
 local palette = require 'brunch.palette'
+local utils = require 'brunch.utils'
+
 local M = {}
 
 ---@return Scheme
@@ -45,6 +47,11 @@ function M.create(opts)
     -- TODO: This doesn't seem to be working.
     SignColumn = { fg = c.surface1 }, -- column where |signs| are displayed
     SignColumnSB = { bg = c.crust, fg = c.surface1 }, -- column where |signs| are displayed
+
+    Substitute = {
+      bg = c.surface1,
+      fg = utils.vary_color({ sunday = c.tomato }, c.raspberry),
+    }, -- |:substitute| replacement text highlighting
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
