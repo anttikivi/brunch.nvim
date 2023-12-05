@@ -27,6 +27,9 @@ function M.create(opts)
     Comment = { fg = c.overlay0, style = opts.styles.comments }, -- any comment
     ColorColumn = { bg = c.surface0 }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = c.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Cursor = { fg = c.cornflower, bg = c.text }, -- character under the cursor
+    lCursor = { fg = c.base, bg = c.text }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+    CursorIM = { fg = c.base, bg = c.text }, -- like Cursor, but used when in IME mode |CursorIM|
   }
 
   return scheme
