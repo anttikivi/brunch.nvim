@@ -14,6 +14,7 @@ function M.create(opts)
   }
 
   local c = scheme.colors
+  local o = scheme.options
 
   ---@class Highlight
   ---@field fg string|number|nil
@@ -26,7 +27,7 @@ function M.create(opts)
   ---@alias Highlights table<string, Highlight>
   ---@type Highlights
   scheme.highlights = {
-    Comment = { fg = c.overlay0, style = opts.styles.comments }, -- any comment
+    Comment = { fg = c.overlay0, style = o.styles.comments or {} }, -- any comment
     ColorColumn = { bg = c.surface0 }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = c.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = { fg = c.base, bg = c.text }, -- character under the cursor
@@ -98,6 +99,76 @@ function M.create(opts)
     Whitespace = { fg = c.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu = { bg = c.overlay0 }, -- current match in 'wildmenu' completion
     WinBar = { fg = c.rosewater }, -- current match in 'wildmenu' completion
+
+    -- These groups are not listed as default vim groups, but they are de facto
+    -- standard group names for syntax highlighting.
+
+    SpecialComment = { link = 'Special' }, -- special things inside a comment
+    Constant = { fg = c.peach }, -- (preferred) any constant
+    String = { fg = c.kale, style = o.styles.strings or {} }, -- a string constant: 'this is a string'
+    Character = { fg = c.aqua }, -- a character constant: 'c', '\n'
+    Number = { fg = c.peach, style = o.styles.numbers or {} }, -- a number constant: 234, 0xff
+    Float = { link = 'Number' }, -- a floating point constant: 2.3e10
+    Boolean = { fg = c.peach, style = o.styles.booleans or {} }, -- a boolean constant: TRUE, false
+    Identifier = { fg = c.grapefruit, style = o.styles.variables or {} }, -- (preferred) any variable name
+    Function = { fg = c.blueberry, style = o.styles.functions or {} }, -- function name (also: methods for classes)
+    Statement = { fg = c.blackberry }, -- (preferred) any statement
+    Conditional = { fg = c.blackberry, style = o.styles.conditionals or {} }, -- if, then, else, endif, switch, etc.
+    Repeat = { fg = c.blackberry, style = o.styles.loops or {} }, -- for, do, while, etc.
+    Label = { fg = c.avocado }, -- case, default, etc.
+    Operator = { fg = c.cornflower, style = o.styles.operators or {} }, -- 'sizeof', '+', '*', etc.
+    Keyword = { fg = c.blackberry, style = o.styles.keywords or {} }, -- any other keyword
+    Exception = { fg = c.blackberry, style = o.styles.keywords or {} }, -- try, catch, throw
+
+    PreProc = { fg = c.raspberry }, -- (preferred) generic Preprocessor
+    Include = { fg = c.blackberry, style = o.styles.keywords or {} }, -- preprocessor #include
+    Define = { link = 'PreProc' }, -- preprocessor #define
+    Macro = { fg = c.blackberry }, -- same as Define
+    PreCondit = { link = 'PreProc' }, -- preprocessor #if, #else, #endif, etc.
+
+    StorageClass = { fg = c.mimosa }, -- static, register, volatile, etc.
+    Structure = { fg = c.mimosa }, -- struct, union, enum, etc.
+    Special = { fg = c.raspberry }, -- (preferred) any special symbol
+    Type = { fg = c.mimosa, style = o.styles.types or {} }, -- (preferred) int, long, char, etc.
+    Typedef = { link = 'Type' }, -- A typedef
+    SpecialChar = { link = 'Special' }, -- special character in a constant
+    Tag = { fg = c.lavender, style = { 'bold' } }, -- you can use CTRL-] on this
+    Delimiter = { fg = c.overlay2 }, -- character that needs attention
+    Debug = { link = 'Special' }, -- debugging statements
+
+    Underlined = { style = { 'underline' } }, -- (preferred) text that stands out, HTML links
+    Bold = { style = { 'bold' } },
+    Italic = { style = { 'italic' } },
+
+    -- ("Ignore", below, may be invisible...)
+    -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
+
+    Error = { fg = c.tomato }, -- (preferred) any erroneous construct
+    Todo = { fg = c.base, bg = c.mimosa, style = { 'bold' } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+
+    qfLineNr = { fg = c.mimosa },
+    qfFileName = { fg = c.blueberry },
+
+    htmlH1 = { fg = c.raspberry, style = { 'bold' } },
+    htmlH2 = { fg = c.blueberry, style = { 'bold' } },
+
+    mkdHeading = { fg = c.peach, style = { 'bold' } },
+    -- mkdCode = { fg = c.text, bg = c.terminal_black },
+    mkdCodeDelimiter = { bg = c.base, fg = c.text },
+    mkdCodeStart = { fg = c.grapefruit, style = { 'bold' } },
+    mkdCodeEnd = { fg = c.grapefruit, style = { 'bold' } },
+    -- mkdLink = { fg = c.blueberry, style = { 'underline' } },
+
+    -- markdownHeadingDelimiter = { fg = c.orange, bold = true },
+    -- markdownCode = { fg = c.teal },
+    -- markdownCodeBlock = { fg = c.teal },
+    -- markdownH1 = { fg = c.magenta, bold = true },
+    -- markdownH2 = { fg = c.blue, bold = true },
+    -- markdownLinkText = { fg = c.blue, underline = true },
+
+    -- Debugging
+    debugPC = { bg = c.crust }, -- used for highlighting the current line in terminal-debug
+    debugBreakpoint = { fg = c.overlay0, bg = c.base }, -- used for breakpoint colors in terminal-debug
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
