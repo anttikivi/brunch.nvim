@@ -1,4 +1,5 @@
 local utils = require 'brunch.utils'
+local scheme = require 'brunch.scheme'
 
 local M = {}
 
@@ -32,7 +33,7 @@ function M.load(opts)
     M.extend(opts)
   end
 
-  utils.load(M.options)
+  utils.load(scheme.create())
 end
 
 return M
