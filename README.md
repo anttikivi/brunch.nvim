@@ -24,9 +24,9 @@ colours. You may sometimes want to or have to use a terminal that doesn&rsquo;t
 support those. More specifically, I haven&rsquo;t found a theme that I like with
 the macOS `Terminal.app`.
 
-Brunch is a [Catppuccin](https://catppuccin.com/)-inspired theme that aims to be
-a good-looking and usable theme for users with terminals that don&rsquo;t have
-support for true colours.
+Brunch is a [Catppuccin](https://github.com/catppuccin)-inspired theme that aims
+to be a good-looking and usable theme for users with terminals that don&rsquo;t
+have support for true colours.
 
 ## ✨ Features
 
