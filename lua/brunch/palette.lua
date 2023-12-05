@@ -2,9 +2,9 @@ local M = {}
 
 ---@class Palette
 M.sunday = {
-  rosewater = 174,
+  rosewater = 218,
   grapefruit = 209,
-  raspberry = 206,
+  raspberry = 212,
   blackberry = 92,
   tomato = 1,
   cranberry = 160,
@@ -33,7 +33,7 @@ M.sunday = {
 ---@type Palette
 M.saturday = {
   rosewater = 244,
-  grapefruit = 225,
+  grapefruit = 210,
   raspberry = 219,
   blackberry = 183,
   tomato = 9,
