@@ -61,6 +61,9 @@ function M.create(opts)
     MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = { fg = c.blueberry }, -- |more-prompt|
     NonText = { fg = c.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    Normal = { fg = c.text }, -- normal text
+    NormalNC = { fg = c.text, bg = c.base }, -- normal text in non-current windows
+    NormalSB = { fg = c.text, bg = c.crust }, -- normal text in non-current windows
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
