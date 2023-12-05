@@ -39,7 +39,9 @@ function M.load(opts)
     M.extend(opts)
   end
 
-  utils.load(scheme.create())
+  utils.load(scheme.create(M.options))
 end
+
+M.setup()
 
 return M
