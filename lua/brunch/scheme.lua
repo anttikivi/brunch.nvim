@@ -95,6 +95,9 @@ function M.create(opts)
     Visual = { bg = c.surface1, style = { 'bold' } }, -- Visual mode selection
     VisualNOS = { bg = c.surface1, style = { 'bold' } }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = c.mimosa }, -- warning messages
+    Whitespace = { fg = c.surface1 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    WildMenu = { bg = c.overlay0 }, -- current match in 'wildmenu' completion
+    WinBar = { fg = c.rosewater }, -- current match in 'wildmenu' completion
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
