@@ -44,11 +44,11 @@ function M.create(opts)
 
     -- TODO: This doesn't seem to be working.
     SignColumn = { fg = c.surface1 }, -- column where |signs| are displayed
-    SignColumnSB = { bg = c.crust, fg = c.surface1 }, -- column where |signs| are displayed
+    SignColumnSB = { fg = c.surface1, bg = c.crust }, -- column where |signs| are displayed
 
     Substitute = {
-      bg = c.surface1,
       fg = utils.vary_color({ sunday = c.tomato }, c.raspberry),
+      bg = c.surface1,
     }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.overlay2 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.peach }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -73,6 +73,9 @@ function M.create(opts)
     PmenuThumb = { bg = c.overlay0 }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.blueberry }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.surface1, style = { 'bold' } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    Search = { fg = c.mantle, bg = c.grapefruit }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    IncSearch = { fg = c.mantle, bg = c.rosewater }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    CurSearch = { fg = c.mantle, bg = c.raspberry }, -- 'cursearch' highlighting: highlights the current search you're on differently
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
