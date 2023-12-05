@@ -17,6 +17,17 @@ nicer theme for users with terminals without support for true colours.
 </details>
 <!-- markdownlint-enable MD033 -->
 
+## ⭐️ Motivation
+
+There are a lot of great themes for Neovim, but most of them require true
+colours. You may sometimes want to or have to use a terminal that doesn&rsquo;t
+support those. More specifically, I haven&rsquo;t found a theme that I like with
+the macOS `Terminal.app`.
+
+Brunch is a [Catppuccin](https://catppuccin.com/)-inspired theme that aims to be
+a good-looking and usable theme for users with terminals that don&rsquo;t have
+support for true colours.
+
 ## ✨ Features
 
 - Supports most [Neovim](https://neovim.io) features.
@@ -70,7 +81,7 @@ vim.cmd.colorscheme 'brunch'
 ## ⚙️ Configuration
 
 > ❗️ **Note:** Make sure to call `setup` before setting the colour scheme with
-> `colorscheme brunch`.
+> `colorscheme brunch` if you want to change the default options and settings.
 
 You don&rsquo;t need to call `setup` if you don&rsquo;t want to change the
 default options and settings.
