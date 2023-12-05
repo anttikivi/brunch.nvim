@@ -100,7 +100,18 @@ require('brunch').setup {
   terminal_colors = false,
   -- Style to be applied to various highlight groups.
   styles = {
+    booleans = {},
     comments = { 'italic' },
+    conditional = { 'italic' },
+    functions = {},
+    keywords = {},
+    loops = {},
+    numbers = {},
+    operators = {},
+    properties = {},
+    strings = {},
+    types = {},
+    variables = {},
   },
 }
 ```

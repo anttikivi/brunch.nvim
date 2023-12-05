@@ -15,7 +15,18 @@ local default_opts = {
   },
   terminal_colors = false,
   styles = {
+    booleans = {},
     comments = { 'italic' },
+    conditional = { 'italic' },
+    functions = {},
+    keywords = {},
+    loops = {},
+    numbers = {},
+    operators = {},
+    properties = {},
+    strings = {},
+    types = {},
+    variables = {},
   },
 }
 
