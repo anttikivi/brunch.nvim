@@ -67,6 +67,10 @@ function M.create(opts)
     NormalFloat = { fg = c.text }, -- Normal text in floating windows.
     FloatBorder = { fg = c.blueberry },
     FloatTitle = { fg = c.subtext0 }, -- Title of floating windows
+    Pmenu = { fg = c.mantle, bg = c.surface1 }, -- Popup menu: normal item.
+    PmenuSel = { bg = c.surface1, style = { 'bold' } }, -- Popup menu: selected item.
+    PmenuSbar = { bg = c.surface1 }, -- Popup menu: scrollbar.
+    PmenuThumb = { bg = c.overlay0 }, -- Popup menu: Thumb of the scrollbar.
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
