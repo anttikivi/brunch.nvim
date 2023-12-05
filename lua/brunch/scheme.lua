@@ -34,6 +34,7 @@ function M.create(opts)
     CursorLine = { bg = c.mantle }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if forecrust (ctermfg OR guifg) is not set.
     Directory = { fg = c.blueberry }, -- directory names (and other special names in listings)
     EndOfBuffer = { fg = c.subtext0 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    ErrorMsg = { fg = c.tomato, style = { 'bold', 'italic' } }, -- error messages on the command line
 
     -- Diffs
     -- TODO: This don't seem to be working.
