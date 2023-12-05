@@ -54,4 +54,27 @@ function M.load(scheme)
   end
 end
 
+---@param palettes table<Variant, number>>
+---@param default number
+---@param opts Options|nil
+---@return number
+function M.vary_color(palettes, default, opts)
+  if opts == nil then
+    return default
+  end
+
+  local bg = vim.o.background
+  local variant = opts.variants[bg]
+
+  if variant == nil then
+    return default
+  end
+
+  if palettes[variant] == nil then
+    return default
+  end
+
+  return palettes[variant]
+end
+
 return M
