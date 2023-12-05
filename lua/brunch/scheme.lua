@@ -62,8 +62,11 @@ function M.create(opts)
     MoreMsg = { fg = c.blueberry }, -- |more-prompt|
     NonText = { fg = c.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal = { fg = c.text }, -- normal text
-    NormalNC = { fg = c.text, bg = c.base }, -- normal text in non-current windows
+    NormalNC = { fg = c.text }, -- normal text in non-current windows
     NormalSB = { fg = c.text, bg = c.crust }, -- normal text in non-current windows
+    NormalFloat = { fg = c.text }, -- Normal text in floating windows.
+    FloatBorder = { fg = c.blueberry },
+    FloatTitle = { fg = c.subtext0 }, -- Title of floating windows
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
