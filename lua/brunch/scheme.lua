@@ -114,6 +114,13 @@ function M.create(opts)
     DiffChange = { bg = c.blueberry }, -- diff mode: Changed line |diff.txt|
     DiffDelete = { bg = c.tomato }, -- diff mode: Deleted line |diff.txt|
     DiffText = { bg = c.blueberry }, -- diff mode: Changed text within a changed line |diff.txt|
+
+    -- Illuminate
+    illuminatedWord = { bg = c.surface1 },
+    illuminatedCurWord = { bg = c.surface1 },
+    IlluminatedWordText = { bg = c.surface1 },
+    IlluminatedWordRead = { bg = c.surface1 },
+    IlluminatedWordWrite = { bg = c.surface1 },
   }
 
   return scheme
