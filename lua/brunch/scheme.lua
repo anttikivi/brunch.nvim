@@ -77,6 +77,12 @@ function M.create(opts)
     IncSearch = { fg = c.mantle, bg = c.rosewater }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { fg = c.mantle, bg = c.raspberry }, -- 'cursearch' highlighting: highlights the current search you're on differently
     SpecialKey = { link = 'NonText' }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
+    -- TODO: The `guisp` option used in these doesn't work, and the undercurl
+    -- usually shows up as an underline.
+    SpellBad = { sp = c.tomato, style = { 'undercurl' } }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap = { sp = c.mimosa, style = { 'undercurl' } }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellLocal = { sp = c.blueberry, style = { 'undercurl' } }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    SpellRare = { sp = c.kale, style = { 'undercurl' } }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
