@@ -92,6 +92,8 @@ function M.create(opts)
     TabLineSel = { fg = c.kale, bg = c.surface1 }, -- tab pages line, active tab page label
 
     Title = { fg = c.blueberry, style = { 'bold' } }, -- titles for output from ":set all", ":autocmd" etc.
+    Visual = { bg = c.surface1, style = { 'bold' } }, -- Visual mode selection
+    VisualNOS = { bg = c.surface1, style = { 'bold' } }, -- Visual mode selection when vim is "Not Owning the Selection".
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
