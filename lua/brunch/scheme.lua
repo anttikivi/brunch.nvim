@@ -32,6 +32,7 @@ function M.create(opts)
     CursorIM = { fg = c.base, bg = c.text }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn = { bg = c.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = { bg = c.mantle }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if forecrust (ctermfg OR guifg) is not set.
+    Directory = { fg = c.blueberry }, -- directory names (and other special names in listings)
   }
 
   return scheme
