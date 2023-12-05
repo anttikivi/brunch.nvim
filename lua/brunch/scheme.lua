@@ -39,6 +39,9 @@ function M.create(opts)
     VertSplit = { fg = c.crust }, -- the column separating vertically split windows
     WinSeparator = { fg = c.crust, bold = true }, -- the column separating vertically split windows
 
+    Folded = { fg = c.blueberry, bg = c.surface1 }, -- line used for closed folds
+    FoldColumn = { fg = c.overlay0 }, -- 'foldcolumn'
+
     -- Diffs
     -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
