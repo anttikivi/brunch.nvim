@@ -36,6 +36,9 @@ function M.create(opts)
     EndOfBuffer = { fg = c.subtext0 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg = { fg = c.tomato, style = { 'bold', 'italic' } }, -- error messages on the command line
 
+    VertSplit = { fg = c.crust }, -- the column separating vertically split windows
+    WinSeparator = { fg = c.crust, bold = true }, -- the column separating vertically split windows
+
     -- Diffs
     -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
