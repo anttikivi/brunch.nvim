@@ -33,6 +33,22 @@ function M.create(opts)
     CursorColumn = { bg = c.mantle }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = { bg = c.mantle }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if forecrust (ctermfg OR guifg) is not set.
     Directory = { fg = c.blueberry }, -- directory names (and other special names in listings)
+
+    -- Diffs
+    -- TODO: This don't seem to be working.
+    diffAdded = { fg = c.kale },
+    diffRemoved = { fg = c.tomato },
+    diffChanged = { fg = c.blueberry },
+    diffOldFile = { fg = c.mimosa },
+    diffNewFile = { fg = c.peach },
+    diffFile = { fg = c.blueberry },
+    diffLine = { fg = c.overlay0 },
+    diffIndexLine = { fg = c.aqua },
+
+    DiffAdd = { bg = c.kale }, -- diff mode: Added line |diff.txt|
+    DiffChange = { bg = c.blueberry }, -- diff mode: Changed line |diff.txt|
+    DiffDelete = { bg = c.tomato }, -- diff mode: Deleted line |diff.txt|
+    DiffText = { bg = c.blueberry }, -- diff mode: Changed text within a changed line |diff.txt|
   }
 
   return scheme
