@@ -37,10 +37,8 @@ function M.create(opts)
     Directory = { fg = c.blueberry }, -- directory names (and other special names in listings)
     EndOfBuffer = { fg = c.subtext0 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg = { fg = c.tomato, style = { 'bold', 'italic' } }, -- error messages on the command line
-
     VertSplit = { fg = c.crust }, -- the column separating vertically split windows
     WinSeparator = { fg = c.crust, bold = true }, -- the column separating vertically split windows
-
     Folded = { fg = c.blueberry, bg = c.surface1 }, -- line used for closed folds
     FoldColumn = { fg = c.overlay0 }, -- 'foldcolumn'
 
@@ -52,11 +50,17 @@ function M.create(opts)
       bg = c.surface1,
       fg = utils.vary_color({ sunday = c.tomato }, c.raspberry),
     }, -- |:substitute| replacement text highlighting
-
     LineNr = { fg = c.overlay2 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.peach }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-
     MatchParen = { fg = c.peach, bg = c.surface1, style = { 'bold' } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    ModeMsg = { fg = c.text, style = { 'bold' } }, -- 'showmode' message (e.g., "-- INSERT -- ")
+
+    -- TODO: Neovim bug.
+    -- MsgArea = { fg = c.text }, -- Area for messages and cmdline, don't set this highlight because of https://github.com/neovim/neovim/issues/17832
+
+    MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
+    MoreMsg = { fg = c.blueberry }, -- |more-prompt|
+    NonText = { fg = c.overlay0 }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
