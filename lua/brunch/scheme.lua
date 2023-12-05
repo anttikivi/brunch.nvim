@@ -76,6 +76,7 @@ function M.create(opts)
     Search = { fg = c.mantle, bg = c.grapefruit }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { fg = c.mantle, bg = c.rosewater }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { fg = c.mantle, bg = c.raspberry }, -- 'cursearch' highlighting: highlights the current search you're on differently
+    SpecialKey = { link = 'NonText' }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 
     -- Diffs
     -- TODO: This doesn't seem to be working.
