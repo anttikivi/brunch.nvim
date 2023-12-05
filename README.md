@@ -1,6 +1,6 @@
 # 🥂 Brunch
 
-Brunch is a cheerful and colourful light and dark theme for
+Brunch is a cheerful 🎉 and colourful 🌈 light and dark theme for
 [Neovim](https://neovim.io) using only 8-bit ANSI colours. It aims to offer a
 nicer theme for users with terminals without support for true colours.
 
