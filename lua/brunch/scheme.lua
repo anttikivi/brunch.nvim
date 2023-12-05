@@ -23,7 +23,10 @@ function M.create(opts)
 
   ---@alias Highlights table<string, Highlight>
   ---@type Highlights
-  scheme.highlights = {}
+  scheme.highlights = {
+    Comment = { fg = c.overlay0, style = opts.styles.comments }, -- any comment
+    ColorColumn = { bg = c.surface0 }, -- used for the columns set with 'colorcolumn'
+  }
 
   return scheme
 end
