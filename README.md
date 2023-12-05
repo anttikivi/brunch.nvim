@@ -98,7 +98,7 @@ require('brunch').setup {
   },
   -- Configure the colors used when opening a `:terminal` in Neovim.
   terminal_colors = false,
-  -- Style to be applied to highlight syntax groups.
+  -- Style to be applied to various highlight groups.
   styles = {
     comments = { 'italic' },
   },
