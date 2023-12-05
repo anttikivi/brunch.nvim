@@ -56,6 +56,8 @@ function M.create(opts)
     LineNr = { fg = c.overlay2 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.peach }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 
+    MatchParen = { fg = c.peach, bg = c.surface1, style = { 'bold' } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+
     -- Diffs
     -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
