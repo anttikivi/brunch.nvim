@@ -26,6 +26,7 @@ function M.create(opts)
   scheme.highlights = {
     Comment = { fg = c.overlay0, style = opts.styles.comments }, -- any comment
     ColorColumn = { bg = c.surface0 }, -- used for the columns set with 'colorcolumn'
+    Conceal = { fg = c.overlay1 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
   }
 
   return scheme
