@@ -42,6 +42,10 @@ function M.create(opts)
     Folded = { fg = c.blueberry, bg = c.surface1 }, -- line used for closed folds
     FoldColumn = { fg = c.overlay0 }, -- 'foldcolumn'
 
+    -- TODO: This doesn't seem to be working.
+    SignColumn = { fg = c.surface1 }, -- column where |signs| are displayed
+    SignColumnSB = { bg = c.crust, fg = c.surface1 }, -- column where |signs| are displayed
+
     -- Diffs
     -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
