@@ -115,3 +115,8 @@ require('brunch').setup {
   },
 }
 ```
+
+## 📝 Licence
+
+This project is licensed under the Apache-2.0 licence. See the
+[LICENSE](LICENSE) file for more information.
