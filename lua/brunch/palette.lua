@@ -32,7 +32,7 @@ M.sunday = {
 
 ---@type Palette
 M.saturday = {
-  rosewater = 244,
+  rosewater = 225,
   grapefruit = 210,
   raspberry = 219,
   blackberry = 183,
