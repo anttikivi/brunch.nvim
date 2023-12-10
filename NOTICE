@@ -1,0 +1,16 @@
+Copyright (c) 2023 Antti Kivi
+This project is licensed under the Apache License, version 2.0.
+
+The tree-sitter utility at 'lua/brunch/treesitter.lua' is from the
+'folke/tokyonight.nvim' repository and licensed under the Apache License,
+version 2.0. See the LICENSE file for more information. The original file can
+be found at
+https://github.com/folke/tokyonight.nvim/blob/f247ee700b569ed43f39320413a13ba9b0aef0db/lua/tokyonight/treesitter.lua.
+
+The improved highlight queries for CSS, JavaScript and TypeScript at
+'after/queries' is from the Catppuccin theme for Neovim at the 'catppuccin/nvim'
+repository and licensed under the MIT License. See the LICENSE.md file in the
+'catppuccin/nvim' repository for more information, available at
+https://github.com/catppuccin/nvim/blob/64dc309bc157779691be38bbfc5123584e0a4a85/LICENSE.md.
+The original files can be found at
+https://github.com/catppuccin/nvim/tree/64dc309bc157779691be38bbfc5123584e0a4a85/after/queries.
