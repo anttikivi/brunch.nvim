@@ -13,7 +13,6 @@ and this project adheres to
 - Light colour scheme variant called `sunday`.
 - Dark colour scheme variant called `saturday`.
 - Improved highlight queries for `css`, `javascript` and `typescript`.
-- `lualine.nvim` support.
 - Highlights for [Neovim&rsquo;s](https://neovim.io) default highlighting
   groups.
 - Highlights for [Neovim&rsquo;s](https://neovim.io) native LSP highlighting
@@ -27,3 +26,4 @@ and this project adheres to
 - Highlights for
   [`gitsigns.nvim`&rsquo;s](https://github.com/lewis6991/gitsigns.nvim)
   highlighting groups.
+- [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) support.
