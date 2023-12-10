@@ -215,7 +215,8 @@ function M.create(opts)
     DiagnosticWarn = { fg = warning, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticInfo = { fg = info, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticHint = { fg = hint, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticUnnecessary = { fg = c.base }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    -- the same colour as comments
+    DiagnosticUnnecessary = { fg = c.overlay0 }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
     DiagnosticVirtualTextError = { fg = c.surface1, bg = c.grapefruit }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticVirtualTextWarn = { fg = c.surface1, bg = c.peach }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
