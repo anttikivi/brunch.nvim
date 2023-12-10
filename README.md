@@ -6,6 +6,10 @@ Brunch is a cheerful 🎉 and colourful 🌈 light and dark theme for
 [Neovim](https://neovim.io) using only 8-bit ANSI colours. It aims to offer a
 nicer theme for users with terminals without support for true colours.
 
+<p align="center">
+  <img width="1300" alt="Preview of the Brunch colour scheme" src="https://github.com/anttikivi/brunch.nvim/assets/29656376/3e19cfaa-f928-4de1-a263-dc615ee8af9a">
+</p>
+
 ## 🎨 Palettes
 
 <!-- markdownlint-disable MD033 -->
