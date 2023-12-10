@@ -27,3 +27,5 @@ and this project adheres to
   [`gitsigns.nvim`&rsquo;s](https://github.com/lewis6991/gitsigns.nvim)
   highlighting groups.
 - [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) support.
+
+[0.1.0]: https://github.com/anttikivi/brunch.nvim/releases/tag/v0.1.0
