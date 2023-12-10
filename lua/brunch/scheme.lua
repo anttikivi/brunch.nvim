@@ -170,6 +170,10 @@ function M.create(opts)
     debugPC = { bg = c.crust }, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { fg = c.overlay0, bg = c.base }, -- used for breakpoint colors in terminal-debug
 
+    ['helpCommand'] = { bg = c.overlay2, fg = c.blueberry },
+
+    dosIniLabel = { link = '@property' },
+
     -- Diffs
     -- TODO: This doesn't seem to be working.
     diffAdded = { fg = c.kale },
@@ -185,6 +189,28 @@ function M.create(opts)
     DiffChange = { bg = c.blueberry }, -- diff mode: Changed line |diff.txt|
     DiffDelete = { bg = c.tomato }, -- diff mode: Deleted line |diff.txt|
     DiffText = { bg = c.blueberry }, -- diff mode: Changed text within a changed line |diff.txt|
+
+    -- Health
+    healthError = { fg = c.tomato },
+    healthSuccess = { fg = c.aqua },
+    healthWarning = { fg = c.mimosa },
+
+    -- Glyphs
+    GlyphPalette1 = { fg = c.tomato },
+    GlyphPalette2 = { fg = c.aqua },
+    GlyphPalette3 = { fg = c.mimosa },
+    GlyphPalette4 = { fg = c.blueberry },
+    GlyphPalette6 = { fg = c.aqua },
+    GlyphPalette7 = { fg = c.text },
+    GlyphPalette9 = { fg = c.tomato },
+
+    -- Rainbow
+    rainbow1 = { fg = c.tomato },
+    rainbow2 = { fg = c.peach },
+    rainbow3 = { fg = c.mimosa },
+    rainbow4 = { fg = c.kale },
+    rainbow5 = { fg = c.avocado },
+    rainbow6 = { fg = c.lavender },
 
     -- Illuminate
     illuminatedWord = { bg = c.surface1 },
