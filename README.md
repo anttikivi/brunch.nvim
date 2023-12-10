@@ -11,11 +11,11 @@ nicer theme for users with terminals without support for true colours.
 <!-- markdownlint-disable MD033 -->
 <details>
 <summary>🧁 Sunday</summary>
-  <img width="1046" alt="sunday" src="https://github.com/anttikivi/brunch.nvim/assets/29656376/40ba88e8-8f12-48d5-a2bd-4c603ffae766">
+  <img width="1046" alt="Preview of the Sunday variant the Brunch colour scheme" src="https://github.com/anttikivi/brunch.nvim/assets/29656376/6f16f11a-d996-4878-a848-5b7125008187">
 </details>
 <details>
 <summary>☕️ Saturday</summary>
-  <img width="1046" alt="saturday" src="https://github.com/anttikivi/brunch.nvim/assets/29656376/95aaa152-119c-4d44-8dc6-817a3df7a1bc">
+  <img width="1046" alt="Preview of the Saturday variant the Brunch colour scheme" src="https://github.com/anttikivi/brunch.nvim/assets/29656376/63f7b27d-6768-4b34-8899-30ae1d2f4f8a">
 </details>
 <!-- markdownlint-enable MD033 -->
 
