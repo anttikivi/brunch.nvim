@@ -23,7 +23,7 @@ function M.create(opts)
   local info = c.cornflower
   local hint = c.aqua
 
-  ---@alias HighlightStyle 'bold' | 'italic' | 'underline' | 'undercurl'
+  ---@alias HighlightStyle 'bold' | 'italic' | 'underline' | 'undercurl' | 'strikethrough'
 
   ---@class Highlight
   ---@field fg string|number|nil
@@ -289,6 +289,206 @@ function M.create(opts)
     rainbow4 = { fg = c.kale },
     rainbow5 = { fg = c.avocado },
     rainbow6 = { fg = c.lavender },
+    rainbow7 = { fg = c.blueberry },
+    rainbowcol1 = { fg = c.tomato },
+    rainbowcol2 = { fg = c.peach },
+    rainbowcol3 = { fg = c.mimosa },
+    rainbowcol4 = { fg = c.kale },
+    rainbowcol5 = { fg = c.avocado },
+    rainbowcol6 = { fg = c.lavender },
+    rainbowcol7 = { fg = c.blueberry },
+    -- TODO: Rainbow delimiters
+
+    -- These groups are for the Neovim tree-sitter highlights.
+    -- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md
+
+    -- Misc
+    ['@comment'] = { link = 'Comment' }, -- line and block comments
+    -- TODO:
+    ['@comment.documentation'] = { link = 'Comment' }, -- comments documenting code
+    ['@error'] = { link = 'Error' }, -- syntax/parser errors
+    -- TODO:
+    -- ['@none'] = { },
+    ['@preproc'] = { link = 'PreProc' }, -- various preprocessor directives & shebangs
+    ['@define'] = { link = 'Define' }, -- preprocessor definition directives
+    ['@operator'] = { link = 'Operator' }, -- symbolic operators (e.g. `+` / `*`)
+
+    -- Punctuation
+    ['@punctuation.delimiter'] = { link = 'Delimiter' }, -- delimiters (e.g. `;` / `.` / `,`).
+    ['@punctuation.bracket'] = { fg = c.overlay2 }, -- brackets (e.g. `()` / `{}` / `[]`)
+    ['@punctuation.special'] = { link = 'Special' }, -- special symbols (e.g. `{}` in string interpolation)
+
+    -- Literals
+    ['@string'] = { link = 'String' }, -- string literals
+    -- TODO:
+    ['@string.documentation'] = { link = 'String' }, -- string documenting code (e.g. Python docstrings)
+    ['@string.regex'] = { fg = c.peach, style = o.styles.strings or {} }, -- regular expressions
+    ['@string.escape'] = { fg = c.raspberry, style = o.styles.strings or {} }, -- escape sequences
+    ['@string.special'] = { link = 'Special' }, -- other special strings (e.g. dates)
+
+    ['@character'] = { link = 'Character' }, -- character literals
+    ['@character.special'] = { link = 'SpecialChar' }, -- special characters (e.g. wildcards)
+
+    ['@boolean'] = { link = 'Boolean' }, -- boolean literals
+    ['@number'] = { link = 'Number' }, -- numeric literals
+    ['@float'] = { link = 'Float' }, -- floating-point number literals
+
+    -- Functions
+    ['@function'] = { link = 'Function' }, -- function definitions
+    ['@function.builtin'] = { fg = c.peach, style = o.styles.functions or {} }, -- built-in functions
+    ['@function.call'] = { link = 'Function' }, -- function calls
+    ['@function.macro'] = { fg = c.aqua, style = o.styles.functions or {} }, -- preprocessor macros
+
+    ['@method'] = { link = 'Function' }, -- method definitions
+    ['@method.call'] = { link = 'Function' }, -- method calls
+
+    ['@constructor'] = { fg = c.avocado }, -- constructor calls and definitions
+    ['@parameter'] = { fg = c.cranberry, style = o.styles.variables or {} }, -- parameters of a function
+
+    -- Keywords
+    ['@keyword'] = { link = 'Keyword' }, -- various keywords
+    ['@keyword.coroutine'] = { link = 'Keyword' }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+    ['@keyword.function'] = {
+      fg = c.blackberry,
+      style = o.styles.keywords or {},
+    }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    ['@keyword.operator'] = {
+      fg = c.blackberry,
+      style = o.styles.operators or {},
+    }, -- operators that are English words (e.g. `and` / `or`)
+    ['@keyword.return'] = { fg = c.blackberry, style = o.styles.keywords or {} }, -- operators that are English words (e.g. `and` / `or`)
+    -- JS & derivative
+    ['@keyword.export'] = { fg = c.cornflower, style = o.styles.keywords },
+
+    ['@conditional'] = { link = 'Conditional' }, -- keywords related to conditionals (e.g. `if` / `else`)
+    ['@conditional.ternary'] = { link = '@operator' }, -- ternary operator (e.g. `?` / `:`)
+
+    ['@repeat'] = { link = 'Repeat' }, -- keywords related to loops (e.g. `for` / `while`)
+    -- TODO:
+    -- ['@debug'] = { link = 'Debug' }, -- keywords related to debugging
+    ['@label'] = { link = 'Label' }, -- GOTO and other labels (e.g. `label:` in C)
+    ['@include'] = { link = 'Include' }, -- keywords for including modules (e.g. `import` / `from` in Python)
+    ['@exception'] = { link = 'Exception' }, -- keywords related to exceptions (e.g. `throw` / `catch`)
+
+    -- Types
+    ['@type'] = { link = 'Type' }, -- type or class definitions and annotations
+    ['@type.builtin'] = {
+      fg = c.mimosa,
+      style = o.styles.properties or { 'italic' },
+    }, -- builtin types
+    ['@type.definition'] = { link = 'Type' }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+    ['@type.qualifier'] = { link = 'Keyword' }, -- type qualifiers (e.g. `const`)
+
+    ['@storageclass'] = { link = 'StorageClass' }, -- modifiers that affect storage in memory or life-time
+    ['@attribute'] = { link = 'Constant' }, -- attribute annotations (e.g. Python decorators)
+    ['@field'] = { fg = c.lavender }, -- object and struct fields
+    ['@property'] = { fg = c.lavender, style = o.styles.properties or {} }, -- similar to `@field`
+
+    -- Identifiers
+    ['@variable'] = { fg = c.text, style = o.styles.variables or {} }, -- various variable names
+    ['@variable.builtin'] = { fg = c.tomato, style = o.styles.properties or {} }, -- built-in variable names (e.g. `this`)
+
+    ['@constant'] = { link = 'Constant' }, -- constant identifiers
+    ['@constant.builtin'] = { fg = c.peach, style = o.styles.keywords or {} }, -- built-in constant values
+    ['@constant.macro'] = { link = 'Macro' }, -- constants defined by the preprocessor
+
+    ['@namespace'] = { fg = c.lavender, style = { 'italic' } }, -- modules or namespaces
+    ['@symbol'] = { fg = c.grapefruit }, -- symbols or atoms
+
+    -- Text
+    ['@text'] = { fg = c.text }, -- non-structured text
+    ['@text.strong'] = { fg = c.cranberry, style = { 'bold' } }, -- bold text
+    ['@text.emphasis'] = { fg = c.cranberry, style = { 'italic' } }, -- text with emphasis
+    ['@text.underline'] = { link = 'Underline' }, -- underlined text
+    ['@text.strike'] = { fg = c.text, style = { 'strikethrough' } }, -- strikethrough text
+    ['@text.title'] = { fg = c.blueberry, style = { 'bold' } }, -- text that is part of a title
+    ['@text.uri'] = { fg = c.rosewater, style = { 'italic', 'underline' } }, -- URIs (e.g. hyperlinks)
+    ['@text.math'] = { fg = c.blueberry }, -- math environments (e.g. `$ ... $` in LaTeX)
+    ['@text.environment'] = { fg = c.raspberry }, -- text environments of markup languages
+    ['@text.environment.name'] = { fg = c.blueberry }, -- text indicating the type of an environment
+    ['@text.reference'] = { link = 'Tag' }, -- text references, footnotes, citations, etc.
+
+    ['@text.literal'] = { fg = c.aqua }, -- literal or verbatim text (e.g., inline code)
+    -- TODO:
+    -- ['@text.literal.block'] = { fg = c.aqua }, -- literal or verbatim text as a stand-alone block (use priority 90 for blocks with injections)
+
+    ['@text.todo'] = { fg = c.base, bg = c.mimosa }, -- todo notes
+    ['@text.todo.checked'] = { fg = c.kale }, -- todo notes
+    ['@text.todo.unchecked'] = { fg = c.overlay1 }, -- todo notes
+    ['@text.note'] = { fg = c.base, bg = c.blueberry }, -- info notes
+    ['@text.warning'] = { fg = c.base, bg = c.mimosa }, -- warning notes
+    ['@text.danger'] = { fg = c.base, bg = c.tomato }, -- danger/error notes
+
+    ['@text.diff.add'] = { link = 'diffAdded' }, -- added text (for diff files)
+    ['@text.diff.delete'] = { link = 'diffRemoved' }, -- deleted text (for diff files)
+
+    -- Tags
+    ['@tag'] = { fg = c.blackberry }, -- XML tag names
+    ['@tag.attribute'] = { fg = c.aqua, style = { 'italic' } }, -- XML tag attributes
+    ['@tag.delimiter'] = { fg = c.cornflower }, -- XML tag delimiters
+
+    -- Language specific:
+    -- Bash
+    ['@function.builtin.bash'] = { fg = c.tomato, style = { 'italic' } },
+
+    -- Markdown
+    ['@text.title.1.markdown'] = { link = 'rainbow1' },
+    ['@text.title.2.markdown'] = { link = 'rainbow2' },
+    ['@text.title.3.markdown'] = { link = 'rainbow3' },
+    ['@text.title.4.markdown'] = { link = 'rainbow4' },
+    ['@text.title.5.markdown'] = { link = 'rainbow5' },
+    ['@text.title.6.markdown'] = { link = 'rainbow6' },
+
+    -- Java
+    ['@constant.java'] = { fg = c.aqua },
+
+    -- CSS
+    ['@property.css'] = { fg = c.lavender },
+    ['@property.id.css'] = { fg = c.blueberry },
+    ['@property.class.css'] = { fg = c.mimosa },
+    ['@type.css'] = { fg = c.lavender },
+    ['@type.tag.css'] = { fg = c.blackberry },
+    ['@string.plain.css'] = { fg = c.peach },
+    ['@number.css'] = { fg = c.peach },
+
+    -- TOML
+    ['@property.toml'] = { fg = c.blueberry }, -- Differentiates between string and properties
+
+    -- JSON
+    ['@label.json'] = { fg = c.blueberry }, -- For labels: label: in C and :label: in Lua.
+
+    -- Lua
+    ['@constructor.lua'] = { fg = c.grapefruit }, -- For constructor calls and definitions: = { } in Lua.
+
+    -- TypeScript
+    ['@property.typescript'] = {
+      fg = c.lavender,
+      style = o.styles.properties or {},
+    },
+    ['@constructor.typescript'] = { fg = c.lavender },
+
+    -- TSX (TypeScript React)
+    ['@constructor.tsx'] = { fg = c.lavender },
+    ['@tag.attribute.tsx'] = { fg = c.blackberry, style = { 'italic' } },
+
+    -- YAML
+    ['@field.yaml'] = { fg = c.blueberry }, -- For fields.
+
+    -- Ruby
+    ['@symbol.ruby'] = { fg = c.grapefruit },
+
+    -- PHP
+    ['@method.php'] = { link = 'Function' },
+    ['@method.call.php'] = { link = 'Function' },
+
+    -- C/C++
+    ['@type.builtin.c'] = { fg = c.mimosa, style = {} },
+    ['@property.cpp'] = { fg = c.text },
+    ['@type.builtin.cpp'] = { fg = c.mimosa, style = {} },
+
+    -- Misc
+    gitcommitSummary = { fg = c.rosewater, style = { 'italic' } },
+    zshKSHFunction = { link = 'Function' },
 
     -- Illuminate
     illuminatedWord = { bg = c.surface1 },
