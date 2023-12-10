@@ -16,6 +16,13 @@ function M.create(opts)
   local c = scheme.colors
   local o = scheme.options
 
+  local none = 'NONE'
+
+  local error = c.tomato
+  local warning = c.mimosa
+  local info = c.cornflower
+  local hint = c.aqua
+
   ---@class Highlight
   ---@field fg string|number|nil
   ---@field bg string|number|nil
@@ -194,6 +201,74 @@ function M.create(opts)
     healthError = { fg = c.tomato },
     healthSuccess = { fg = c.aqua },
     healthWarning = { fg = c.mimosa },
+
+    -- These groups are for the native LSP client. Some other LSP clients may
+    -- use these groups, or use their own. Consult your LSP client's
+    -- documentation.
+    LspReferenceText = { bg = c.surface1 }, -- used for highlighting "text" references
+    LspReferenceRead = { bg = c.surface1 }, -- used for highlighting "read" references
+    LspReferenceWrite = { bg = c.surface1 }, -- used for highlighting "write" references
+
+    DiagnosticError = { fg = error, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticWarn = { fg = warning, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticInfo = { fg = info, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticHint = { fg = hint, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticUnnecessary = { fg = c.base }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+
+    DiagnosticVirtualTextError = { fg = error, bg = c.grapefruit }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextWarn = { fg = warning, bg = c.peach }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextInfo = { fg = info, bg = c.blueberry }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextHint = { fg = hint, bg = c.cornflower }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+
+    -- TODO: The `guisp` option used in these doesn't work.
+    DiagnosticUnderlineError = { style = { 'underline' }, sp = error }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn = { style = { 'underline' }, sp = warning }, -- Used to underline "Warn" diagnostics
+    DiagnosticUnderlineInfo = { style = { 'underline' }, sp = info }, -- Used to underline "Info" diagnostics
+    DiagnosticUnderlineHint = { style = { 'underline' }, sp = hint }, -- Used to underline "Hint" diagnostics
+
+    DiagnosticFloatingError = { fg = error }, -- Used to color "Error" diagnostic messages in diagnostics float
+    DiagnosticFloatingWarn = { fg = warning }, -- Used to color "Warn" diagnostic messages in diagnostics float
+    DiagnosticFloatingInfo = { fg = info }, -- Used to color "Info" diagnostic messages in diagnostics float
+    DiagnosticFloatingHint = { fg = hint }, -- Used to color "Hint" diagnostic messages in diagnostics float
+
+    DiagnosticSignError = { fg = error }, -- Used for "Error" signs in sign column
+    DiagnosticSignWarn = { fg = warning }, -- Used for "Warn" signs in sign column
+    DiagnosticSignInfo = { fg = info }, -- Used for "Info" signs in sign column
+    DiagnosticSignHint = { fg = hint }, -- Used for "Hint" signs in sign column
+
+    LspDiagnosticsDefaultError = { fg = error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultInformation = { fg = info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultHint = { fg = hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspSignatureActiveParameter = { fg = c.peach },
+    -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
+    -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
+    -- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
+    -- LspDiagnosticsFloatingHint          = { }, -- Used to color "Hint" diagnostic messages in diagnostics float
+
+    LspDiagnosticsError = { fg = error },
+    LspDiagnosticsWarning = { fg = warning },
+    LspDiagnosticsInformation = { fg = info },
+    LspDiagnosticsHint = { fg = hint },
+    LspDiagnosticsVirtualTextError = { fg = error }, -- Used for "Error" diagnostic virtual text
+    LspDiagnosticsVirtualTextWarning = { fg = warning }, -- Used for "Warning" diagnostic virtual text
+    LspDiagnosticsVirtualTextInformation = { fg = info }, -- Used for "Information" diagnostic virtual text
+    LspDiagnosticsVirtualTextHint = { fg = hint }, -- Used for "Hint" diagnostic virtual text
+    LspDiagnosticsUnderlineError = { style = { 'underline' }, sp = error }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning = { style = { 'underline' }, sp = warning }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation = { style = { 'underline' }, sp = info }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineHint = { style = { 'underline' }, sp = hint }, -- Used to underline "Hint" diagnostics
+    LspCodeLens = { fg = c.overlay0 }, -- virtual text of the codelens
+    LspInlayHint = {
+      -- fg of `Comment`
+      fg = c.overlay0,
+      -- bg of `CursorLine`
+      bg = utils.vary_color({ sunday = c.mantle }, c.mantle),
+    }, -- virtual text of the inlay hints
+    LspInfoBorder = { link = 'FloatBorder' }, -- LspInfo border
+
+    ALEErrorSign = { fg = error },
+    ALEWarningSign = { fg = warning },
 
     -- Glyphs
     GlyphPalette1 = { fg = c.tomato },
