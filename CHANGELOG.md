@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.1.0] - 2023-12-10
+
 ### Added
 
 - Light colour scheme variant called `sunday`.
@@ -28,4 +30,5 @@ and this project adheres to
   highlighting groups.
 - [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) support.
 
+[unreleased]: https://github.com/anttikivi/brunch.nvim/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/anttikivi/brunch.nvim/releases/tag/v0.1.0
