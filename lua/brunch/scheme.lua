@@ -23,10 +23,12 @@ function M.create(opts)
   local info = c.cornflower
   local hint = c.aqua
 
+  ---@alias HighlightStyle 'bold' | 'italic' | 'underline' | 'undercurl'
+
   ---@class Highlight
   ---@field fg string|number|nil
   ---@field bg string|number|nil
-  ---@field style string[]|nil
+  ---@field style HighlightStyle[]|nil
   ---@field link string|nil
   ---@field ctermfg string|number|nil
   ---@field ctermbg string|number|nil
@@ -215,10 +217,10 @@ function M.create(opts)
     DiagnosticHint = { fg = hint, bg = none }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticUnnecessary = { fg = c.base }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-    DiagnosticVirtualTextError = { fg = error, bg = c.grapefruit }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticVirtualTextWarn = { fg = warning, bg = c.peach }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticVirtualTextInfo = { fg = info, bg = c.blueberry }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticVirtualTextHint = { fg = hint, bg = c.cornflower }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextError = { fg = c.surface1, bg = c.grapefruit }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextWarn = { fg = c.surface1, bg = c.peach }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextInfo = { fg = c.surface1, bg = c.blueberry }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticVirtualTextHint = { fg = c.surface1, bg = c.cornflower }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
     -- TODO: The `guisp` option used in these doesn't work.
     DiagnosticUnderlineError = { style = { 'underline' }, sp = error }, -- Used to underline "Error" diagnostics
