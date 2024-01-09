@@ -8,6 +8,15 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- Floating window background colour for the Saturday variant is lighter.
+
+### Fixed
+
+- Varying the colours for highlights that have different keys for Sunday and
+  Saturday variants.
+
 ## [0.1.0] - 2023-12-10
 
 ### Added
