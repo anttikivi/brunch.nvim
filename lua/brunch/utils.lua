@@ -91,12 +91,7 @@ end
 ---@param opts Options|nil
 ---@return number
 function M.vary_color(palettes, default, opts)
-  if opts == nil then
-    return default
-  end
-
-  local bg = vim.o.background
-  local variant = opts.variants[bg]
+  local variant = vim.o.background == 'light' and 'sunday' or 'saturday'
 
   if variant == nil then
     return default
