@@ -78,7 +78,8 @@ function M.create(opts)
     NormalSB = { fg = c.text, bg = c.crust }, -- normal text in non-current windows
     NormalFloat = {
       fg = c.text,
-      bg = utils.vary_color({ saturday = c.overlay0 }, c.surface0),
+      bg = c.surface0,
+      -- bg = utils.vary_color({ saturday = c.overlay0 }, c.surface0),
     },                                                               -- Normal text in floating windows.
     FloatBorder = { fg = c.blueberry },
     FloatTitle = { fg = c.subtext0 },                                -- Title of floating windows
