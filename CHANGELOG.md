@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0](https://github.com/anttikivi/brunch.nvim/compare/v0.1.0...v0.2.0) (2024-01-10)
+
+
+### Features
+
+* change the floating window colour for the Saturday variant ([fa97272](https://github.com/anttikivi/brunch.nvim/commit/fa972726b5071bf05bfa90fdc2b5aeaec1ac2ef4))
+* revert the varying colour for the floating window ([1009792](https://github.com/anttikivi/brunch.nvim/commit/1009792bfa26f0f989848b632525e1f00230dc25))
+
+
+### Bug Fixes
+
+* fix the varying colours ([1089296](https://github.com/anttikivi/brunch.nvim/commit/1089296c094f5e55856221ef5362be033619bf70))
+
 ## [Unreleased]
 
 ### Changed
